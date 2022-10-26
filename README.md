@@ -28,6 +28,8 @@ _Click on the flow names above to see the flow related details_
 
     ![vCenter Tags](https://media.github.ibm.com/user/375131/files/0eb7bd00-5141-11ed-9b2c-4bde7c361f33)
 
+**Note:** Tags sync from vCenter to Turbonomic might take upto 20 minutes.
+
 
 ## AppConnect Configuration
 
