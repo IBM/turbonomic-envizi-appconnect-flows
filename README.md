@@ -19,7 +19,7 @@ _Click on the flow names above to see the flow related details_
 
 ## Turbonomic Configuration
 
-- Turbonomic v8.6.5 or higher is required for this integration to work
+- Turbonomic v8.6.6 or higher is required for this integration to work
 - Create a user in Turbonomic with "Observer" role. The AppConnect will be configured to use this user's credentials to fetch the necessary data.
 - For accurate emission calculations from Envizi, add the following Tag Categories in vCenter and add their values as tags to the Data Centers:
     - `Country`: Name of Country
