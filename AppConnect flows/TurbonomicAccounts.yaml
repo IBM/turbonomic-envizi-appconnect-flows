@@ -1052,7 +1052,7 @@ integration:
                             type: string
                           unit:
                             type: string
-                      EnergyToHostDensity:
+                      EnergyToHostIntensity:
                         type: object
                         properties:
                           uuid:
@@ -1132,14 +1132,14 @@ integration:
                               - value:
                                   expression: $round($sum($JSONParserParse4.statistics.values.total) * (
                                     $count($JSONParserParse4.statistics)=1?144:6)/1000,4)
-                        - EnergyToHostDensity:
+                        - EnergyToHostIntensity:
                             mappings:
                               - date:
                                   template: "{{$Foreach2item.startDate}}"
                               - location:
                                   template: "{{$Foreachitem.displayName}}"
                               - parameter:
-                                  template: Energy Host Density
+                                  template: Energy Host Intensity
                               - unit:
                                   template: kWh/host
                               - uuid:

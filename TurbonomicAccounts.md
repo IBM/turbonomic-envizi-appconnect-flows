@@ -20,11 +20,11 @@ The ideal time to execute this flow is at UTC midnight between 00:05 and 00:30
 
 | CSV Headers   | Turbonomic API Field                                                                                                                | Comments                           |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
-| ACCOUNT       | `displayName` + ("Active Hosts" or "Energy Consumption" or "Energy Host Density" or "Active VMs" or "VM Host Density")              |                                    |
-| DATATYPE      | "Active Hosts" or "Energy Consumption" or "Energy Host Density" or "Active VMs" or "VM Host Density"                                |                                    |
+| ACCOUNT       | `displayName` + ("Active Hosts" or "Energy Consumption" or "Energy Host Intensity" or "Active VMs" or "VM Host Density")              |                                    |
+| DATATYPE      | "Active Hosts" or "Energy Consumption" or "Energy Host Intensity" or "Active VMs" or "VM Host Density"                                |                                    |
 | LOCATION      | `displayName`                                                                                                                       | Data Center API                    |
 | LOCATIONID    | `uuid`                                                                                                                              | Data Center API                    |
 | MEASUREUNITID | "number" or "kWh" or "VM/host" or "kWh/host"                                                                                        |                                    |
-| METERNAME     | "Active Hosts" or "Energy Consumption" or "Energy Host Density" or "Active VMs" or "VM Host Density"                                |                                    |
+| METERNAME     | "Active Hosts" or "Energy Consumption" or "Energy Host Intensity" or "Active VMs" or "VM Host Density"                                |                                    |
 | QUANTITY      | Calculated using `seMap.PhysicalMachine.stateSummary.ACTIVE`, `seMap.VirtualMachine.stateSummary.ACTIVE`, `statistics.values.total` | Supply Chain and Entity Stats APIs |
 | READINGDATE   | Start of day timestamp (UTC)                                                                                                        |                                    |
