@@ -300,10 +300,6 @@ integration:
                     $ref: "#/node-output/Set variable/response/payload"
                   - variable: If
                     $ref: "#/node-output/If/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
                   - variable: flowDetails
@@ -318,6 +314,8 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
+                  - variable: If
+                    $ref: "#/node-output/If/response/payload"
                   - variable: HTTPInvokemethod
                     $ref: "#/node-output/HTTP Invoke method/response/payload"
                   - variable: HTTPInvokemethodMetadata
@@ -330,12 +328,27 @@ integration:
                     $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: flowDetails
                     $ref: "#/flowDetails"
-              sample-data: |2-
+              sample-data: |-
                     [{
                       "uuid": "12345678901234",
                       "displayName": "Sample Display Name",
                       "className": "DataCenter",
                       "environmentType": "ONPREM",
+                            "tags": {
+                        
+                        "Country": [
+                            "India"
+                        ],
+                        "Latitude": [
+                            "0"
+                        ],
+                        "Longitude": [
+                            "0"
+                        ],
+                        "EnviziAlternateName": [
+                            "Alternate Sample Name"
+                        ]
+                    },
                       "state": "ACTIVE"
                     }]
               output-schema:
@@ -352,6 +365,25 @@ integration:
                       type: string
                     environmentType:
                       type: string
+                    tags:
+                      type: object
+                      properties:
+                        Country:
+                          type: array
+                          items:
+                            type: string
+                        Latitude:
+                          type: array
+                          items:
+                            type: string
+                        Longitude:
+                          type: array
+                          items:
+                            type: string
+                        EnviziAlternateName:
+                          type: array
+                          items:
+                            type: string
                     state:
                       type: string
                 title: Parsed JSON
@@ -645,16 +677,8 @@ integration:
                               $ref: "#/node-output/Set variable/response/payload"
                             - variable: If
                               $ref: "#/node-output/If/response/payload"
-                            - variable: HTTPInvokemethod
-                              $ref: "#/node-output/HTTP Invoke method/response/payload"
-                            - variable: HTTPInvokemethodMetadata
-                              $ref: "#/node-output/HTTP Invoke method/response"
                             - variable: Setvariable2
                               $ref: "#/node-output/Set variable 2/response/payload"
-                            - variable: HTTPInvokemethod3
-                              $ref: "#/node-output/HTTP Invoke method 3/response/payload"
-                            - variable: HTTPInvokemethod3Metadata
-                              $ref: "#/node-output/HTTP Invoke method 3/response"
                             - variable: JSONParserParse2
                               $ref: "#/node-output/JSON Parser Parse 2/response/payload"
                             - variable: flowDetails
@@ -845,16 +869,8 @@ integration:
                     $ref: "#/node-output/Set variable/response/payload"
                   - variable: If
                     $ref: "#/node-output/If/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
-                  - variable: HTTPInvokemethod3
-                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
-                  - variable: HTTPInvokemethod3Metadata
-                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse2
                     $ref: "#/node-output/JSON Parser Parse 2/response/payload"
                   - variable: flowDetails
@@ -970,16 +986,8 @@ integration:
                     $ref: "#/node-output/Set variable/response/payload"
                   - variable: If
                     $ref: "#/node-output/If/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
-                  - variable: HTTPInvokemethod3
-                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
-                  - variable: HTTPInvokemethod3Metadata
-                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse2
                     $ref: "#/node-output/JSON Parser Parse 2/response/payload"
                   - variable: flowDetails
@@ -1076,26 +1084,14 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: If2
                     $ref: "#/block/For each/node-output/If 2/response/payload"
-                  - variable: HTTPInvokemethod5
-                    $ref: "#/block/For each/node-output/HTTP Invoke method 5/response/payload"
-                  - variable: HTTPInvokemethod5Metadata
-                    $ref: "#/block/For each/node-output/HTTP Invoke method 5/response"
                   - variable: JSONParserParse4
                     $ref: "#/block/For each/node-output/JSON Parser Parse 4/response/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
                   - variable: If
                     $ref: "#/node-output/If/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
-                  - variable: HTTPInvokemethod3
-                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
-                  - variable: HTTPInvokemethod3Metadata
-                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse2
                     $ref: "#/node-output/JSON Parser Parse 2/response/payload"
                   - variable: flowDetails
@@ -1108,7 +1104,9 @@ integration:
                               - date:
                                   template: "{{$Foreach2item.startDate}}"
                               - location:
-                                  template: "{{$Foreachitem.displayName}}"
+                                  template: "{{$Foreachitem.tags.EnviziAlternateName[0] ?
+                                    $Foreachitem.tags.EnviziAlternateName[0] :
+                                    $Foreachitem.displayName}}"
                               - parameter:
                                   template: Active Hosts
                               - unit:
@@ -1122,7 +1120,9 @@ integration:
                               - date:
                                   template: "{{$Foreach2item.startDate}}"
                               - location:
-                                  template: "{{$Foreachitem.displayName}}"
+                                  template: "{{$Foreachitem.tags.EnviziAlternateName[0] ?
+                                    $Foreachitem.tags.EnviziAlternateName[0] :
+                                    $Foreachitem.displayName}}"
                               - parameter:
                                   template: Energy Consumption
                               - unit:
@@ -1137,7 +1137,9 @@ integration:
                               - date:
                                   template: "{{$Foreach2item.startDate}}"
                               - location:
-                                  template: "{{$Foreachitem.displayName}}"
+                                  template: "{{$Foreachitem.tags.EnviziAlternateName[0] ?
+                                    $Foreachitem.tags.EnviziAlternateName[0] :
+                                    $Foreachitem.displayName}}"
                               - parameter:
                                   template: Energy Host Intensity
                               - unit:
@@ -1152,7 +1154,9 @@ integration:
                               - date:
                                   template: "{{$Foreach2item.startDate}}"
                               - location:
-                                  template: "{{$Foreachitem.displayName}}"
+                                  template: "{{$Foreachitem.tags.EnviziAlternateName[0] ?
+                                    $Foreachitem.tags.EnviziAlternateName[0] :
+                                    $Foreachitem.displayName}}"
                               - parameter:
                                   template: Active VMs
                               - unit:
@@ -1166,7 +1170,9 @@ integration:
                               - date:
                                   template: "{{$Foreach2item.startDate}}"
                               - location:
-                                  template: "{{$Foreachitem.displayName}}"
+                                  template: "{{$Foreachitem.tags.EnviziAlternateName[0] ?
+                                    $Foreachitem.tags.EnviziAlternateName[0] :
+                                    $Foreachitem.displayName}}"
                               - parameter:
                                   template: VM Host Density
                               - unit:

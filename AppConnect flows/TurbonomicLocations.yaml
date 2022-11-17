@@ -172,10 +172,6 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
                   - variable: flowDetails
@@ -207,16 +203,8 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
-                  - variable: HTTPInvokemethod2
-                    $ref: "#/node-output/HTTP Invoke method 2/response/payload"
-                  - variable: HTTPInvokemethod2Metadata
-                    $ref: "#/node-output/HTTP Invoke method 2/response"
                   - variable: flowDetails
                     $ref: "#/flowDetails"
           - parse:
@@ -314,12 +302,27 @@ integration:
                     $ref: "#/node-output/JSON Parser Parse/response/payload"
                   - variable: flowDetails
                     $ref: "#/flowDetails"
-              sample-data: |2-
+              sample-data: |-
                     [{
                       "uuid": "12345678901234",
                       "displayName": "Sample Display Name",
                       "className": "DataCenter",
                       "environmentType": "ONPREM",
+                            "tags": {
+                        
+                        "Country": [
+                            "India"
+                        ],
+                        "Latitude": [
+                            "0"
+                        ],
+                        "Longitude": [
+                            "0"
+                        ],
+                        "EnviziAlternateName": [
+                            "Alternate Sample Name"
+                        ]
+                    },
                       "state": "ACTIVE"
                     }]
               output-schema:
@@ -336,6 +339,25 @@ integration:
                       type: string
                     environmentType:
                       type: string
+                    tags:
+                      type: object
+                      properties:
+                        Country:
+                          type: array
+                          items:
+                            type: string
+                        Latitude:
+                          type: array
+                          items:
+                            type: string
+                        Longitude:
+                          type: array
+                          items:
+                            type: string
+                        EnviziAlternateName:
+                          type: array
+                          items:
+                            type: string
                     state:
                       type: string
                 title: Parsed JSON
@@ -354,20 +376,8 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
-                  - variable: HTTPInvokemethod2
-                    $ref: "#/node-output/HTTP Invoke method 2/response/payload"
-                  - variable: HTTPInvokemethod2Metadata
-                    $ref: "#/node-output/HTTP Invoke method 2/response"
-                  - variable: HTTPInvokemethod3
-                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
-                  - variable: HTTPInvokemethod3Metadata
-                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse
                     $ref: "#/node-output/JSON Parser Parse/response/payload"
                   - variable: JSONParserParse2
@@ -416,7 +426,9 @@ integration:
                                       titude :
                                       $locationsCSVItem.tags.Latitude[0]}}"
                                 - LOCATION:
-                                    template: "{{$locationsCSVItem.displayName}}"
+                                    template: "{{$locationsCSVItem.tags.EnviziAlternateName[0] ?
+                                      $locationsCSVItem.tags.EnviziAlternateNam\
+                                      e[0] : $locationsCSVItem.displayName}}"
                                 - LOCATIONID:
                                     template: "{{$locationsCSVItem.uuid}}"
                                 - LONGITUDEX:
@@ -483,20 +495,8 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
-                  - variable: HTTPInvokemethod
-                    $ref: "#/node-output/HTTP Invoke method/response/payload"
-                  - variable: HTTPInvokemethodMetadata
-                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
-                  - variable: HTTPInvokemethod2
-                    $ref: "#/node-output/HTTP Invoke method 2/response/payload"
-                  - variable: HTTPInvokemethod2Metadata
-                    $ref: "#/node-output/HTTP Invoke method 2/response"
-                  - variable: HTTPInvokemethod3
-                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
-                  - variable: HTTPInvokemethod3Metadata
-                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse
                     $ref: "#/node-output/JSON Parser Parse/response/payload"
                   - variable: JSONParserParse2

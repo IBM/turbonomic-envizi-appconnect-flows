@@ -27,6 +27,8 @@ _Click on the flow names above to see the flow related details_
     - `Longitude`: Longitude in Decimal Degrees format
 
     ![vCenter Tags](https://media.github.ibm.com/user/375131/files/0eb7bd00-5141-11ed-9b2c-4bde7c361f33)
+- By default, Envizi will use the Data Center name configured in Turbonomic/vCenter. To change this, Tag Category `EnviziAlternateName` can be added with the desired display name as its value.
+- Envizi Locations (Data Centers in this case) need unique display names. If there are any Data Centers with same names, they should be changed from vCenter or Tag Category `EnviziAlternateName` should be added to the Data Center(s) with different name(s)
 
 **Note:** Tags sync from vCenter to Turbonomic might take upto 20 minutes.
 
