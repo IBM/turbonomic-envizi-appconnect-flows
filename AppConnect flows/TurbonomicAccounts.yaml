@@ -90,7 +90,7 @@ integration:
                   - variable:
                       mappings:
                         - version:
-                            template: 1.0.0
+                            template: 1.0.1
           - if:
               name: If
               input:
@@ -1182,5 +1182,5 @@ integration:
                               - value:
                                   expression: $round($If2.supplychainOutput.seMap.VirtualMachine.stateSummary.ACTIVE/$If2.supplychainOutput.seMap.PhysicalMachine.stateSummary.ACTIVE,4)
               display-name: DataCenter
-  name: TurbonomicAccounts_v1_0_0
+  name: TurbonomicAccounts_v1_0_1
 models: {}
