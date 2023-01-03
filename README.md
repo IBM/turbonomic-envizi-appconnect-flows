@@ -37,6 +37,8 @@ _Click on the flow names above to see the flow related details_
 
 For help, refer to the [AppConnect official documentation](#appconnect-official-documentation) to perform the below operations:
 
+_Note: Self-signed certificates and/or private network should be configured if required for proper connectivity_
+
 1. Add Account for "Amazon S3" connector
     - Credentials will be given by Envizi
 2. Add an Account for "HTTP" connector
