@@ -303,28 +303,28 @@ integration:
                   - variable: flowDetails
                     $ref: "#/flowDetails"
               sample-data: |-
-                    [{
-                      "uuid": "12345678901234",
-                      "displayName": "Sample Display Name",
-                      "className": "DataCenter",
-                      "environmentType": "ONPREM",
-                            "tags": {
-                        
-                        "Country": [
-                            "India"
-                        ],
-                        "Latitude": [
-                            "0"
-                        ],
-                        "Longitude": [
-                            "0"
-                        ],
-                        "EnviziAlternateName": [
-                            "Alternate Sample Name"
-                        ]
-                    },
-                      "state": "ACTIVE"
-                    }]
+                [{
+                  "uuid": "12345678901234",
+                  "displayName": "Sample Display Name",
+                  "className": "DataCenter",
+                  "environmentType": "ONPREM",
+                        "tags": {
+                    
+                    "Country": [
+                        "India"
+                    ],
+                    "Latitude": [
+                        "0"
+                    ],
+                    "Longitude": [
+                        "0"
+                    ],
+                    "EnviziAlternateName": [
+                        "Alternate Sample Name"
+                    ]
+                },
+                  "state": "ACTIVE"
+                }]
               output-schema:
                 $schema: http://json-schema.org/draft-04/schema#
                 type: array
