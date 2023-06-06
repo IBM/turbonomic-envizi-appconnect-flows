@@ -172,6 +172,10 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
+                  - variable: HTTPInvokemethod
+                    $ref: "#/node-output/HTTP Invoke method/response/payload"
+                  - variable: HTTPInvokemethodMetadata
+                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
                   - variable: flowDetails
@@ -203,8 +207,16 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
+                  - variable: HTTPInvokemethod
+                    $ref: "#/node-output/HTTP Invoke method/response/payload"
+                  - variable: HTTPInvokemethodMetadata
+                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
+                  - variable: HTTPInvokemethod2
+                    $ref: "#/node-output/HTTP Invoke method 2/response/payload"
+                  - variable: HTTPInvokemethod2Metadata
+                    $ref: "#/node-output/HTTP Invoke method 2/response"
                   - variable: flowDetails
                     $ref: "#/flowDetails"
           - parse:
@@ -483,8 +495,8 @@ integration:
                   - ContentType:
                       template: text/plain
                   - Key:
-                      template: "{{$Setvariable.variable.config.customer}}/generic/unprocessed/{{$Set\
-                        variable2.variable.locationsFilename}}"
+                      template: '{{$replace($Setvariable.variable.config.customer,"
+                        ","_")}}/generic/unprocessed/{{$Setvariable2.variable.locationsFilename}}'
                   - bucketName:
                       template: envizi-appconnect
                   - content:
@@ -495,8 +507,20 @@ integration:
                     $ref: "#/trigger/payload"
                   - variable: Setvariable
                     $ref: "#/node-output/Set variable/response/payload"
+                  - variable: HTTPInvokemethod
+                    $ref: "#/node-output/HTTP Invoke method/response/payload"
+                  - variable: HTTPInvokemethodMetadata
+                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
+                  - variable: HTTPInvokemethod2
+                    $ref: "#/node-output/HTTP Invoke method 2/response/payload"
+                  - variable: HTTPInvokemethod2Metadata
+                    $ref: "#/node-output/HTTP Invoke method 2/response"
+                  - variable: HTTPInvokemethod3
+                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
+                  - variable: HTTPInvokemethod3Metadata
+                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse
                     $ref: "#/node-output/JSON Parser Parse/response/payload"
                   - variable: JSONParserParse2

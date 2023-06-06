@@ -300,6 +300,10 @@ integration:
                     $ref: "#/node-output/Set variable/response/payload"
                   - variable: If
                     $ref: "#/node-output/If/response/payload"
+                  - variable: HTTPInvokemethod
+                    $ref: "#/node-output/HTTP Invoke method/response/payload"
+                  - variable: HTTPInvokemethodMetadata
+                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
                   - variable: flowDetails
@@ -576,8 +580,8 @@ integration:
                   - ContentType:
                       template: text/plain
                   - Key:
-                      template: "{{$Setvariable.variable.config.customer}}/generic/unprocessed/{{$Set\
-                        variable2.variable.accountsFilename}}"
+                      template: '{{$replace($Setvariable.variable.config.customer,"
+                        ","_")}}/generic/unprocessed/{{$Setvariable2.variable.accountsFilename}}'
                   - bucketName:
                       template: envizi-appconnect
                   - content:
@@ -677,8 +681,16 @@ integration:
                               $ref: "#/node-output/Set variable/response/payload"
                             - variable: If
                               $ref: "#/node-output/If/response/payload"
+                            - variable: HTTPInvokemethod
+                              $ref: "#/node-output/HTTP Invoke method/response/payload"
+                            - variable: HTTPInvokemethodMetadata
+                              $ref: "#/node-output/HTTP Invoke method/response"
                             - variable: Setvariable2
                               $ref: "#/node-output/Set variable 2/response/payload"
+                            - variable: HTTPInvokemethod3
+                              $ref: "#/node-output/HTTP Invoke method 3/response/payload"
+                            - variable: HTTPInvokemethod3Metadata
+                              $ref: "#/node-output/HTTP Invoke method 3/response"
                             - variable: JSONParserParse2
                               $ref: "#/node-output/JSON Parser Parse 2/response/payload"
                             - variable: flowDetails
@@ -869,8 +881,16 @@ integration:
                     $ref: "#/node-output/Set variable/response/payload"
                   - variable: If
                     $ref: "#/node-output/If/response/payload"
+                  - variable: HTTPInvokemethod
+                    $ref: "#/node-output/HTTP Invoke method/response/payload"
+                  - variable: HTTPInvokemethodMetadata
+                    $ref: "#/node-output/HTTP Invoke method/response"
                   - variable: Setvariable2
                     $ref: "#/node-output/Set variable 2/response/payload"
+                  - variable: HTTPInvokemethod3
+                    $ref: "#/node-output/HTTP Invoke method 3/response/payload"
+                  - variable: HTTPInvokemethod3Metadata
+                    $ref: "#/node-output/HTTP Invoke method 3/response"
                   - variable: JSONParserParse2
                     $ref: "#/node-output/JSON Parser Parse 2/response/payload"
                   - variable: flowDetails
