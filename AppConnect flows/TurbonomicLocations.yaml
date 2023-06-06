@@ -79,7 +79,7 @@ integration:
                   - variable:
                       mappings:
                         - version:
-                            template: 1.0.1
+                            template: 1.1.0
           - custom-action:
               name: HTTP Invoke method
               target:
@@ -529,5 +529,5 @@ integration:
                     $ref: "#/node-output/Set variable 3/response/payload"
                   - variable: flowDetails
                     $ref: "#/flowDetails"
-  name: TurbonomicLocations_v1_0_1
+  name: TurbonomicLocations_v1_1_0
 models: {}
